@@ -16,7 +16,7 @@
 | `_dev/sql/switch_to_prod.sql` | перевод базы на боевой адрес `/ivano-frankivsk/` |
 | `_dev/prod/.htaccess` | .htaccess для боя (RewriteBase `/ivano-frankivsk/`) |
 | `_dev/config/config.inc.php.example` | `core/config/config.inc.php` с относительными путями — вписать доступы к БД |
-| `_dev/images/dnipro-images.tsv` | **список фото**, которые нужно забрать с сайта Днепра (754 шт., откуда → куда) |
+| `_dev/images/dnipro-images.tsv` | **список фото**, которые нужно забрать с сайта Днепра (880 шт., откуда → куда) |
 | `_dev/images/fetch_dnipro_images.php` | скрипт: кладётся в корень сайта и сам скачивает эти фото на сервер |
 | `_dev/images/fetch_dnipro_images.sh` | то же по SSH: `bash fetch_dnipro_images.sh` из корня сайта |
 | `_dev/images/fetch_dnipro_images.ps1` | то же для Windows: скачивает в папку на компьютер, потом залить по FTP |
