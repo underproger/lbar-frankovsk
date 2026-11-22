@@ -430,6 +430,9 @@ def element_pass(site):
         v = ch(n).replace('<th>Время</th>', '<th>[[++cultureKey:is=`ru`:then=`Время`:else=`Час`]]</th>')
         v = v.replace('<th>Цена</th>', '<th>[[++cultureKey:is=`ru`:then=`Цена`:else=`Ціна`]]</th>')
         put(n, v)
+    # empty blog block (blog not published) -> only when the first article TV is filled
+    for tid in (1, 8):
+        site.q(f"update {P}site_templates set content=replace(content, '[[$bl-blog]]', '[[*title-st-1:notempty=`[[$bl-blog]]`]]') where id=%s and content not like '%%title-st-1:notempty%%'", (tid,))
     # reviews block: Google Maps link of the Dnipro studio -> off
     v = ch('bl9-reviews')
     v = v.replace('[[*id:is=`51`:or:is=`304`:then=`', '[[*id:is=`-1`:then=`')
