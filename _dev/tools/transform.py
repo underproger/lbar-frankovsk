@@ -367,9 +367,6 @@ def gallery_pass(site):
     # remaining galleries: make URLs relative to the site (they used /assets/... of Kyiv root or /dnipro/assets/...)
     site.q(f"update {P}ms2_resource_files set url=substring(url, 9) where url like '/dnipro/assets/%%'")
     site.q(f"update {P}ms2_resource_files set url=substring(url, 2) where url like '/assets/%%'")
-    # review screenshots (171/299) belong to other cities -> hide
-    site.q(f"update {P}ms2_resource_files set active=0 where resource_id in (171,299)")
-    REPORT['gallery'].append('review screenshots on otzyvy (171/299) set active=0')
 
 # ------------------------------------------------------------------ 6. chunks & templates
 def element_pass(site):
@@ -470,13 +467,7 @@ def settings_pass(site):
     }
     for k, v in CC.items():
         site.q(f"update {P}clientconfig_setting set value=%s where `key`=%s", (v, k))
-    # reviews of other cities/masters -> hidden (published=0, kept in DB)
-    n = site.q(f"""select count(*) from {P}ec_messages m join {P}ec_threads t on t.id=m.thread
-                   where m.published=1 and t.resource in ({','.join(map(str, site.live))})""")[0][0]
-    site.q(f"""update {P}ec_messages m join {P}ec_threads t on t.id=m.thread set m.published=0
-               where m.published=1 and t.resource in ({','.join(map(str, site.live))})""")
-    site.q(f"update {P}ec_threads set rating_simple=0, rating_wilson=0, count=0 where resource in ({','.join(map(str, site.live))})")
-    REPORT['reviews'].append(f'{n} published reviews (Dnipro/Kyiv) set published=0')
+    # reviews: kept as on the Dnipro site (user's decision, patch 004)
     # logs / stats / sessions start clean (tables already empty in slim dump)
     for t in ('session', 'manager_log', 'stat_online_users', 'stat_page_statistics', 'register_messages', 'active_users'):
         site.q(f"truncate table {P}{t}")
