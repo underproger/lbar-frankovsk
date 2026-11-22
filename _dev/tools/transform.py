@@ -443,6 +443,8 @@ def env_pass(site, host, base):
          ('ua', 'site_name'): 'Студія ПМ LBar Івано-Франківськ', ('web', 'site_name'): 'Студия ПМ LBar Ивано-Франковск'}
     for (ctx, k), v in S.items():
         site.q(f"update {P}context_setting set value=%s where context_key=%s and `key`=%s", (v, ctx, k))
+    for ctx in ('web', 'ua'):
+        site.q(f"insert into {P}context_setting (context_key,`key`,value,xtype,namespace,area,editedon) values (%s,'session_cookie_path',%s,'textfield','core','session',NOW()) on duplicate key update value=values(value)", (ctx, base))
     site.q(f"update {P}context set name='Русский (RU)', description='Русская версия (/ru/)' where `key`='web'")
     site.q(f"update {P}context set name='Українська (UA, основна)', description='Основна українська версія (корінь сайту)' where `key`='ua'")
 
