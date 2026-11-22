@@ -1,0 +1,16 @@
+# MODX runtime / environment-specific
+core/cache/*
+!core/cache/.gitkeep
+core/config/config.inc.php
+core/packages/
+assets/image-cache/
+webp/
+*.log
+
+# база не хранится в публичном репозитории (доступы Google Sheets, заявки клиентов, хэш админа)
+*.sql
+*.sql.gz
+
+# служебный скрипт загрузки фото после использования удаляется с сервера
+/fetch_dnipro_images.php
+/dnipro-images.tsv
