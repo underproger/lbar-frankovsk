@@ -92,10 +92,10 @@ a.btn-blog-more:before, a.btn-blog-more:after, .tag-sub-inst:before, .view-sub-i
 .tag-sub-inst:before, .view-sub-inst:before, .reviews-sub-inst:before, .date-sub-inst:before {
     left: 0;top: 0;bottom: 0;width: 25px;
 }
-.tag-sub-inst:before {background-image: url(/images/design/tag.png);background-repeat: no-repeat;background-position: left center;}
-.view-sub-inst:before {background-image: url(/images/design/view.png);background-repeat: no-repeat;background-position: left center;}
-.reviews-sub-inst:before {background-image: url(/images/design/reviews-2.png);background-repeat: no-repeat;background-position: left center;}
-.date-sub-inst:before {background-image: url(/images/design/date.png);background-repeat: no-repeat;background-position: left center;}
+.tag-sub-inst:before {background-image: url(../../../images/design/tag.png);background-repeat: no-repeat;background-position: left center;}
+.view-sub-inst:before {background-image: url(../../../images/design/view.png);background-repeat: no-repeat;background-position: left center;}
+.reviews-sub-inst:before {background-image: url(../../../images/design/reviews-2.png);background-repeat: no-repeat;background-position: left center;}
+.date-sub-inst:before {background-image: url(../../../images/design/date.png);background-repeat: no-repeat;background-position: left center;}
 
 /* ????????? */
 
@@ -131,7 +131,7 @@ a.btn-blog-more:before {
     -o-transition: all 0.5s ease;
 }
 a.btn-blog-more:after {
-    background-image: url(/images/design/arrow-more-white.png);
+    background-image: url(../../../images/design/arrow-more-white.png);
     background-repeat: no-repeat;
     background-position: center;
     width: 6px;height: 12px;top: 50%;right: 27px;margin-top: -4px;
@@ -139,7 +139,7 @@ a.btn-blog-more:after {
 .no-touch a.btn-blog-more:hover:before{
     width: 100%;
 }
-.no-touch a.btn-blog-more:hover:after{background-image: url(/images/design/arrow-more-black.png);}
+.no-touch a.btn-blog-more:hover:after{background-image: url(../../../images/design/arrow-more-black.png);}
 .no-touch a.btn-blog-more:hover {
     color: #010101;
 }
@@ -161,7 +161,7 @@ a.btn-blog-more:after {
     height: 0.2px;width: auto;background-color: #002655;
 }
 .category-text-inst ul li{
-    background-image:url(/images/design/arrow.png);background-repeat: no-repeat;background-position: left 18px;
+    background-image:url(../../../images/design/arrow.png);background-repeat: no-repeat;background-position: left 18px;
     font-size: 16px;color: #363636;line-height: 1.6;text-align: left;
     padding: 7px 0px 7px 21px;
 }
@@ -228,22 +228,22 @@ a.btn-blog-more:after {
     left: 0;top: 0;bottom: 0;width: 25px;
 }
 .folder-inst:before{
-    background-image: url(/images/design/tag.png);background-repeat: no-repeat;background-position: left center;
+    background-image: url(../../../images/design/tag.png);background-repeat: no-repeat;background-position: left center;
 }
 .autor-inst:before{
-    background-image: url(/images/design/author.png);background-repeat: no-repeat;background-position: left center;
+    background-image: url(../../../images/design/author.png);background-repeat: no-repeat;background-position: left center;
 }
 .date-inst:before{
-    background-image: url(/images/design/date.png);background-repeat: no-repeat;background-position: left center;
+    background-image: url(../../../images/design/date.png);background-repeat: no-repeat;background-position: left center;
 }
 .view-inst:before{
-    background-image: url(/images/design/view.png);background-repeat: no-repeat;background-position: left center;
+    background-image: url(../../../images/design/view.png);background-repeat: no-repeat;background-position: left center;
 }
 .rating-inst:before{
-    background-image: url(/images/design/rating.png);background-repeat: no-repeat;background-position: left center;
+    background-image: url(../../../images/design/rating.png);background-repeat: no-repeat;background-position: left center;
 }
 .reviews-inst:before{
-    background-image: url(/images/design/reviews.png);background-repeat: no-repeat;background-position: left center;
+    background-image: url(../../../images/design/reviews.png);background-repeat: no-repeat;background-position: left center;
 }
 /* ?????????? ??????*/
 .content-blog-page-bg-inst, .content-blog-info-bg-inst{
@@ -269,7 +269,7 @@ a.btn-blog-more:after {
     height: 0.2px;width: auto;background-color: #002655;
 }
 .content-blog-page-inst ul li{
-    background-image:url(/images/design/arrow.png);background-repeat: no-repeat;background-position: left 18px;
+    background-image:url(../../../images/design/arrow.png);background-repeat: no-repeat;background-position: left 18px;
     color: #363636;line-height: 1.6;text-align: left;
     padding: 7px 0px 7px 21px;
 }
@@ -322,7 +322,7 @@ a.btn-blog-more:after {
 }
 .youtube-player .play {
     height: 72px;width: 72px;left: 50%;top: 50%;margin-left: -36px;margin-top: -36px;position: absolute;
-    background: url("/images/design/play-button-svgrepo-com.svg") no-repeat;cursor: pointer; background-size: contain;
+    background: url("../../../images/design/play-button-svgrepo-com.svg") no-repeat;cursor: pointer; background-size: contain;
 }
 
 /* ------------ ?????? action -------------- */
@@ -400,13 +400,13 @@ a.btn-blog-more:after {
 .row-comment-message-inst .ec-message__reply p{margin: 10px 0;}
 /**/
 .ec-stars span, .ec-rating-stars span.active, .ec-rating-stars span.active2 {
-    background: url(/images/design/ec-stars-yellow.svg) 0 0 repeat-x !important;
+    background: url(../../../images/design/ec-stars-yellow.svg) 0 0 repeat-x !important;
 }
 .ec-rating-stars span.active {
     background-position: 0 0;
 }
 .ec-rating-stars span {
-    background: url(/images/design/ec-stars-hover.svg) 0 0 no-repeat !important;
+    background: url(../../../images/design/ec-stars-hover.svg) 0 0 no-repeat !important;
 }
 
 /* ------------ Rating -------------- */
@@ -415,14 +415,14 @@ a.btn-blog-more:after {
     position: relative;width: 130px;height: 25px;
 }
 .rating__best {
-    background: url(/images/design/stars.png) no-repeat;
+    background: url(../../../images/design/stars.png) no-repeat;
     width: 130px;height: 25px;position: absolute;
 }
 .rating_active .rating__star {
     cursor: pointer;
 }
 .rating__best_hover {
-    background: url(/images/design/stars-hover.png) no-repeat;
+    background: url(../../../images/design/stars-hover.png) no-repeat;
 }
 .rating__star {
     width: 26px;height: 25px;display: block;position: absolute;top: 0;left: 0;
@@ -433,34 +433,34 @@ a.btn-blog-more:after {
 .rating__star_4 {left: 78px;}
 .rating__star_5 {left: 104px;}
 .rating__star_opacity {
-    background: url(/images/design/stars.png) no-repeat;
+    background: url(../../../images/design/stars.png) no-repeat;
 }
 .rating__star_2:hover ~ .rating__star_1.rating__star_opacity{
-    background: url(/images/design/stars-hover.png)!important;
+    background: url(../../../images/design/stars-hover.png)!important;
 }
 .rating__star_3:hover ~ .rating__star_2.rating__star_opacity, 
 .rating__star_3:hover ~ .rating__star_1.rating__star_opacity {
-    background: url(/images/design/stars-hover.png)!important;
+    background: url(../../../images/design/stars-hover.png)!important;
 }
 .rating__star_3:hover ~ .rating__star_1.rating__star_opacity {
-    background: url(/images/design/stars-hover.png)!important;
+    background: url(../../../images/design/stars-hover.png)!important;
 }
 .rating__star_4:hover ~ .rating__star_1.rating__star_opacity, 
 .rating__star_4:hover ~ .rating__star_2.rating__star_opacity, 
 .rating__star_4:hover ~ .rating__star_3.rating__star_opacity {
-    background: url(/images/design/stars-hover.png)!important;
+    background: url(../../../images/design/stars-hover.png)!important;
 }
 .rating__star_5:hover ~ .rating__star_1.rating__star_opacity, 
 .rating__star_5:hover ~ .rating__star_2.rating__star_opacity, 
 .rating__star_5:hover ~ .rating__star_3.rating__star_opacity,
 .rating__star_5:hover ~ .rating__star_4.rating__star_opacity {
-    background: url(/images/design/stars-hover.png)!important;
+    background: url(../../../images/design/stars-hover.png)!important;
 }
 /*.test:hover + .test2 {
   color: red;
 }*/
 .rating__current {
-    background: url(/images/design/stars-hover.png) 0 0px no-repeat;
+    background: url(../../../images/design/stars-hover.png) 0 0px no-repeat;
     height: 25px;position: absolute;
 }
 .rating, .rating-info-r{display: inline-block;vertical-align: middle;}
@@ -555,7 +555,7 @@ a.btn-blog-more:after {
     position: absolute;top: 0;right: 0;
     display: inline-block;height: 46px;width: 46px;
     padding: 0;margin: 0;border: 0;outline: 0;background-color: #A78F85;
-    background-image: url(/images/design/search.png);background-repeat: no-repeat;background-position: center;
+    background-image: url(../../../images/design/search.png);background-repeat: no-repeat;background-position: center;
 }
 .btn.btn-default.submit-s:hover{background-color: #e8e8e8;}
 /* ?????????? ??????*/

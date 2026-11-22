@@ -8,8 +8,8 @@ webp/
 *.log
 
 # база не хранится в публичном репозитории (доступы Google Sheets, заявки клиентов, хэш админа)
-*.sql
 *.sql.gz
+/_dev/sql/lbar_ivano_frankivsk_*.sql
 
 # служебный скрипт загрузки фото после использования удаляется с сервера
 /fetch_dnipro_images.php

@@ -1,79 +1,40 @@
-# MODX supports Friendly URLs via this .htaccess file. You must serve web
-# pages via Apache with mod_rewrite to use this functionality, and you must
-# change the file name from ht.access to .htaccess.
-#
-# Make sure RewriteBase points to the directory where you installed MODX.
-# E.g., "/modx" if your installation is in a "modx" subdirectory.
-#
-# You may choose to make your URLs non-case-sensitive by adding a NC directive
-# to your rule: RewriteRule ^(.*)$ index.php?q=$1 [L,QSA,NC]
-
+# LBar Ivano-Frankivsk — тестовий сайт https://lbar-frankovsk.touchit.vinnica.ua/
+# Мови: українська (контекст ua) — у корені сайту, російська (контекст web) — у /ru/
 RewriteEngine On
-RewriteBase /dnipro/
+RewriteBase /
 
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*/)?index\.php
 RewriteRule ^index\.php$ / [L,R=301]
 
 RewriteCond %{REQUEST_URI} ^index\.php$
 RewriteCond %{QUERY_STRING} ^(.*)&?id=1&?(.*)$ [NC]
 RewriteRule ^index\.php$ /?%1%2 [L,R=301]
 
-RewriteCond %{REQUEST_URI} ^/$
-RewriteCond %{QUERY_STRING} ^(.*)&?id=1&?(.*)$ [NC]
-RewriteRule ^$ /?%1%2 [R=301,L]
+# службові GET-параметри з реклами -> 301 на чисту адресу (як на сайті Дніпра)
+RewriteCond %{QUERY_STRING} ^(myfield_sity1_tid|utm_source|ref|page|utm_medium)=(.*)$
+RewriteRule ^(.*)$ /$1? [R=301,L]
 
-RewriteCond %{QUERY_STRING} ^myfield_sity1_tid=(.*)$
-RewriteRule ^(.*) https://lbar.com.ua/dnipro/$1? [R=301,L]
-
-RewriteCond %{QUERY_STRING} ^utm_source=(.*)$
-RewriteRule ^(.*) https://lbar.com.ua/dnipro/$1? [R=301,L]
-
-RewriteCond %{QUERY_STRING} ^ref=(.*)$
-RewriteRule ^(.*) https://lbar.com.ua/dnipro/$1? [R=301,L]
-
-RewriteCond %{QUERY_STRING} ^page=(.*)$
-RewriteRule ^(.*) https://lbar.com.ua/dnipro/$1? [R=301,L]
-
-RewriteCond %{QUERY_STRING} ^utm_medium=(.*)$
-RewriteRule ^(.*) https://lbar.com.ua/dnipro/$1? [R=301,L]
-
-# Rewrite www.domain.com -> domain.com -- used with SEO Strict URLs plugin
-#RewriteCond %{HTTP_HOST} .
-#RewriteCond %{HTTP_HOST} ^www.(.*)$ [NC]
-#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-#
-# or for the opposite domain.com -> www.domain.com use the following
-# DO NOT USE BOTH
-#
-#RewriteCond %{HTTP_HOST} !^$
-#RewriteCond %{HTTP_HOST} !^www\. [NC]
-#RewriteCond %{HTTP_HOST} (.+)$
-#RewriteRule ^(.*)$ http://www.%1/$1 [R=301,L] .
+# стара схема мов: /ua/... -> /... (українська тепер основна)
+RewriteRule ^ua(?:/(.*))?$ /$1 [R=301,L]
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(ru|ua)/favicon.ico$ favicon.ico [L,QSA]
+RewriteRule ^ru/favicon.ico$ favicon.ico [L,QSA]
 
+# відносні шляхи з <base href=".../ru/"> -> спільні папки
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(ru|ua)/assets(.*)$ assets$2 [L,QSA]
+RewriteRule ^ru/(assets|images|webp)/(.*)$ $1/$2 [L,QSA]
 
+# російська версія
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(ru|ua)?/?(.*)$ index.php?cultureKey=$1&q=$2 [L,QSA]
+RewriteRule ^(ru)(?:/(.*))?$ index.php?cultureKey=$1&q=$2 [L,QSA]
 
-# Rewrite secure requests properly to prevent SSL cert warnings, e.g. prevent 
-# https://www.domain.com when your cert only allows https://secure.domain.com
-#RewriteCond %{SERVER_PORT} !^443
-#RewriteRule (.*) https://example-domain-please-change.com/$1 [R=301,L]
-
-
-
-# The Friendly URLs part
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_FILENAME} !-d
-# RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
-
+# українська (основна) версія
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?q=$1 [L,QSA]
 
 # сжатие text, html, javascript, css, xml:
 <ifModule mod_deflate.c>

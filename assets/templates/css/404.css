@@ -59,28 +59,28 @@ a.retun:hover{
 }
 @font-face {
     font-family: "FuturaLightc";
-    src: url("/assets/templates/fonts/FuturaLightc/FuturaLightc.eot");
-    src: url("/assets/templates/fonts/FuturaLightc/FuturaLightc.eot?#iefix")format("embedded-opentype"),
-    url("/assets/templates/fonts/FuturaLightc/FuturaLightc.woff") format("woff"),
-    url("/assets/templates/fonts/FuturaLightc/FuturaLightc.ttf") format("truetype");
+    src: url("../fonts/FuturaLightc/FuturaLightc.eot");
+    src: url("../fonts/FuturaLightc/FuturaLightc.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/FuturaLightc/FuturaLightc.woff") format("woff"),
+    url("../fonts/FuturaLightc/FuturaLightc.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "FuturaDemic"; /*regular*/
-    src: url("/assets/templates/fonts/FuturaDemic/FuturaDemic.eot");
-    src: url("/assets/templates/fonts/FuturaDemic/FuturaDemic.eot?#iefix")format("embedded-opentype"),
-    url("/assets/templates/fonts/FuturaDemic/FuturaDemic.woff") format("woff"),
-    url("/assets/templates/fonts/FuturaDemic/FuturaDemic.ttf") format("truetype");
+    src: url("../fonts/FuturaDemic/FuturaDemic.eot");
+    src: url("../fonts/FuturaDemic/FuturaDemic.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/FuturaDemic/FuturaDemic.woff") format("woff"),
+    url("../fonts/FuturaDemic/FuturaDemic.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
 @font-face {
     font-family: "FuturaMediumc";
-    src: url("/assets/templates/fonts/FuturaMediumc/FuturaMediumc.eot");
-    src: url("/assets/templates/fonts/FuturaMediumc/FuturaMediumc.eot?#iefix")format("embedded-opentype"),
-    url("/assets/templates/fonts/FuturaMediumc/FuturaMediumc.woff") format("woff"),
-    url("/assets/templates/fonts/FuturaMediumc/FuturaMediumc.ttf") format("truetype");
+    src: url("../fonts/FuturaMediumc/FuturaMediumc.eot");
+    src: url("../fonts/FuturaMediumc/FuturaMediumc.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/FuturaMediumc/FuturaMediumc.woff") format("woff"),
+    url("../fonts/FuturaMediumc/FuturaMediumc.ttf") format("truetype");
     font-style: normal;
     font-weight: normal;
 }
