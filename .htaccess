@@ -1,5 +1,11 @@
 # LBar Ivano-Frankivsk — тестовий сайт https://lbar-frankovsk.touchit.vinnica.ua/
 # Мови: українська (контекст ua) — у корені сайту, російська (контекст web) — у /ru/
+# ТЕСТОВЫЙ САЙТ: закрыт от индексации целиком (страницы, картинки, файлы).
+# На бою этого блока нет — там .htaccess из _dev/prod/.
+<IfModule mod_headers.c>
+    Header always set X-Robots-Tag "noindex, nofollow"
+</IfModule>
+
 RewriteEngine On
 RewriteBase /
 
