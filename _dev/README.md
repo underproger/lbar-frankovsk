@@ -14,6 +14,7 @@
 | `site/assets/images/resources/<id>/…` | галереи ms2Gallery с работами Инны (+ medium/small) |
 | `_dev/sql/lbar_ivano_frankivsk_test.sql.gz` | готовая база для теста (все правки уже внутри). **В репозитории её нет** — репо публичное, а в базе доступы Google Sheets, заявки клиентов и хэш пароля админа; дамп лежит в архиве lbar-frankovsk-update.zip |
 | `_dev/sql/switch_to_prod.sql` | перевод базы на боевой адрес `/ivano-frankivsk/` |
+| `_dev/sql/prod_open_indexing.sql` | открыть боевой сайт для индексации |
 | `_dev/prod/.htaccess` | .htaccess для боя (RewriteBase `/ivano-frankivsk/`) |
 | `_dev/config/config.inc.php.example` | `core/config/config.inc.php` с относительными путями — вписать доступы к БД |
 | `_dev/images/dnipro-images.tsv` | **список фото**, которые нужно забрать с сайта Днепра (880 шт., откуда → куда) |
@@ -38,10 +39,14 @@
 
 ## Перенос на бой (`lbar.com.ua/ivano-frankivsk/`)
 
-1. Файлы — в папку `ivano-frankivsk`, `.htaccess` взять из `_dev/prod/`, в `config.inc.php` поставить `$base = '/ivano-frankivsk/'`.
-2. Импорт той же базы + `_dev/sql/switch_to_prod.sql`.
-3. Фото — тем же скриптом (или скопировать с теста).
-4. Индексация: в чанке `head` жёстко стоит `noindex nofollow` — **ровно так же сейчас на живом сайте Днепра** (lbar.com.ua/dnipro/ закрыт от индексации). Открыть — раскомментировать последнюю строку в `switch_to_prod.sql`.
+1. Файлы — копия папки сайта с теста (вместе с `images/`, `assets/images/`, `webp/`) в `www/ivano-frankivsk/`, без `core/cache/*`.
+2. `.htaccess` — из `_dev/prod/` (RewriteBase `/ivano-frankivsk/`, без заголовка `X-Robots-Tag` теста).
+3. `core/config/config.inc.php`: все URL с префиксом `/ivano-frankivsk/` (`$modx_base_url`, `$modx_connectors_url`, `$modx_manager_url`, `$modx_assets_url`), а `$http_host` — только домен `lbar.com.ua`, без схемы и папки.
+4. Дамп базы с теста → боевая база, затем `_dev/sql/switch_to_prod.sql`: адреса контекстов, cookie сессии на `/ivano-frankivsk/` со своим именем `lbarif_sess`, четыре ссылки от корня домена, старые сессии.
+5. Удалить `core/cache/*`, в админке `/ivano-frankivsk/impulsemanager/` → «Очистить кэш».
+6. Индексация: `_dev/sql/prod_open_indexing.sql` (в чанке `head` до этого жёстко стоит `noindex nofollow`, как на сайте Днепра). Поисковики читают только `lbar.com.ua/robots.txt` в корне домена — туда добавить `Sitemap: https://lbar.com.ua/ivano-frankivsk/sitemap.xml` и `.../ru/sitemap.xml`; `robots.txt` внутри сайта на подпапку не действует.
+
+Проверено на копии в подпапке `/ivano-frankivsk/` (дамп теста от 2026-11-27): 58 страниц отдают 200, ни одной ссылки, картинки или CSS за пределы папки, canonical и hreflang на `/ivano-frankivsk/`, `/ua/` и `index.php` → 301, 404 работает, админка входит и открывает ресурсы, медиа-браузер и галереи.
 
 ## Что сделано
 

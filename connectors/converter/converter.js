@@ -120,7 +120,7 @@ Ext.onReady(function() {
 		
 		localStorage.setItem('converter_mode', mode);
 		
-		fetch("/connectors/converter/converter.php", {
+		fetch(MODx.config.connectors_url + "converter/converter.php", {
 			method: "POST",
 			body: data
 		}).then(response => {
