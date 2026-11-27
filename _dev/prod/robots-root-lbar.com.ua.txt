@@ -6,6 +6,14 @@ Disallow: /connectors/
 Disallow: /index.php
 Disallow: *?
 Disallow: /rezultatyi-poiska
+# Дніпро — сайт у папці /dnipro/ (RU) і /dnipro/ua/ (UA)
+Disallow: /dnipro/impulsemanager/
+Disallow: /dnipro/assets/components/
+Disallow: /dnipro/core/
+Disallow: /dnipro/connectors/
+Disallow: /dnipro/index.php
+Allow: /dnipro/assets/components/*.css
+Allow: /dnipro/assets/components/*.js
 # Івано-Франківськ — сайт у папці /ivano-frankivsk/
 Disallow: /ivano-frankivsk/impulsemanager/
 Disallow: /ivano-frankivsk/assets/components/
