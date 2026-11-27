@@ -3,8 +3,10 @@
 RewriteEngine On
 RewriteBase /ivano-frankivsk/
 
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*/)?index\.php
-RewriteRule ^index\.php$ /ivano-frankivsk/ [L,R=301]
+# index.php -> головна потрібної мови (/ivano-frankivsk/ і /ivano-frankivsk/ru/)
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /ivano-frankivsk/(ru/)?index\.php[?\ ] [NC]
+RewriteRule ^(ru/)?index\.php$ /ivano-frankivsk/$1 [NC,R=301,L]
 
 RewriteCond %{REQUEST_URI} ^index\.php$
 RewriteCond %{QUERY_STRING} ^(.*)&?id=1&?(.*)$ [NC]
