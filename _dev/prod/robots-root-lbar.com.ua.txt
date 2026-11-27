@@ -1,0 +1,30 @@
+User-agent: *
+Disallow: /impulsemanager/
+Disallow: /assets/components/
+Disallow: /core/
+Disallow: /connectors/
+Disallow: /index.php
+Disallow: *?
+Disallow: /rezultatyi-poiska
+# Івано-Франківськ — сайт у папці /ivano-frankivsk/
+Disallow: /ivano-frankivsk/impulsemanager/
+Disallow: /ivano-frankivsk/assets/components/
+Disallow: /ivano-frankivsk/core/
+Disallow: /ivano-frankivsk/connectors/
+Disallow: /ivano-frankivsk/index.php
+Allow: /ivano-frankivsk/assets/components/*.css
+Allow: /ivano-frankivsk/assets/components/*.js
+Allow: /images/
+Allow: /*.js
+Allow: /*.css
+Allow: /*.jpg
+Allow: /*.gif
+Allow: /*.png
+
+Host: https://lbar.com.ua
+Sitemap: https://lbar.com.ua/sitemap.xml
+Sitemap: https://lbar.com.ua/ua/sitemap.xml
+Sitemap: https://lbar.com.ua/dnipro/sitemap.xml
+Sitemap: https://lbar.com.ua/dnipro/ua/sitemap.xml
+Sitemap: https://lbar.com.ua/ivano-frankivsk/sitemap.xml
+Sitemap: https://lbar.com.ua/ivano-frankivsk/ru/sitemap.xml
